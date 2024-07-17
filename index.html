@@ -1,0 +1,543 @@
+<html><head><base href="https://finpact.co.il/%25d7%259e%25d7%2597%25d7%25a9%25d7%2591%25d7%2595%25d7%259f-%25d7%259e%25d7%25aa%25d7%2599-%25d7%2590%25d7%2592%25d7%2599%25d7%25a2-%25d7%259c%25d7%25a2%25d7%25a6%25d7%259e%25d7%2590%25d7%2595%25d7%25aa-%25d7%259b%25d7%259c%25d7%259b%25d7%259c%25d7%2599%25d7%25aa/%20%D7%AA%D7%9B%D7%99%D7%9F%20%D7%9C%D7%99%20%D7%93%D7%A3%20%D7%A9%D7%9C%20%D7%94%D7%9E%D7%97%D7%A9%D7%91%D7%95%D7%9F"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מחשבון עצמאות כלכלית - Finpact</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+  
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f0f4f8;
+    --text-color: #34495e;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .logo {
+    width: 350px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .header-content {
+    flex-grow: 1;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .profile {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2.2em;
+  }
+
+  .calculator, .explanation {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .calculator:hover, .explanation:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="number"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+
+  button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+
+  button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+  }
+
+  button:active {
+    transform: translateY(0);
+  }
+
+  #result {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 1.2em;
+    background-color: #e8f6f3;
+    border: 2px solid #2ecc71;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .note, .example {
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin: 25px 0;
+    font-size: 1.05em;
+  }
+
+  .note {
+    background-color: #fff3cd;
+    border: 2px solid #ffeeba;
+  }
+
+  .example {
+    background-color: #e8f4fd;
+    border: 2px solid #b8daff;
+  }
+
+  footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 1em;
+    color: #777;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+  }
+
+  .tip-container {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .tip-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+
+  .tip-icon:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+  }
+
+  .tip-icon img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .tip-text {
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+
+  .tip-text:hover {
+    transform: scale(1.05);
+  }
+
+  .tip-content {
+    position: fixed;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 300px;
+    text-align: right;
+    display: none;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 25px;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+  }
+
+  .whatsapp-button:active {
+    transform: translateY(0);
+  }
+
+  .disclaimer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: var(--border-radius);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+    
+    header {
+      flex-direction: column;
+      padding: 25px 0;
+    }
+
+    .logo, .profile {
+      margin: 15px 0;
+    }
+    
+    h1 {
+      font-size: 2.2em;
+    }
+
+    .calculator, .explanation {
+      padding: 25px;
+    }
+
+    .tip-container {
+      position: fixed;
+      top: auto;
+      bottom: 20px;
+      left: 20px;
+      transform: none;
+      flex-direction: row;
+    }
+
+    .tip-icon {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
+
+    .tip-content {
+      top: auto;
+      bottom: 100px;
+      left: 20px;
+      transform: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img alt="לוגו Finpact, כיתוב בכחול עם סמל של תיק כסף" src="https://scontent.ftlv1-1.fna.fbcdn.net/v/t39.30808-6/450948890_790597573226524_8054391302127661590_n.png?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=6jXymu10kKgQ7kNvgFqe3H-&_nc_ht=scontent.ftlv1-1.fna&oh=00_AYDVew2qpShx1LG28fcF7Bh0Nrq4TUtVvTjXSdC25q1Ixg&oe=669CB839" width="350" height="70">
+    </div>
+    <div class="header-content">
+      <h1>מחשבון עצמאות כלכלית</h1>
+    </div>
+    <div class="profile">
+      <img alt="תמונת פרופיל של אריאל אוחיון, איש עסקים צעיר עם חיוך רחב" src="https://scontent.ftlv1-1.fna.fbcdn.net/v/t39.30808-6/277228552_303197421942064_1038964460876065028_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=9fWYRdbkVGEQ7kNvgH4I8jR&_nc_ht=scontent.ftlv1-1.fna&oh=00_AYAR8bdkYK6SCPw2cKrqqubsP3oGmvieOlDt3trIXJsWZQ&oe=669CCC81" width="100" height="100">
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="calculator">
+      <h2>הזינו את הנתונים שלכם</h2>
+      <form id="financialIndependenceForm">
+        <label for="monthlyIncome">הכנסה חודשית (בש"ח):</label>
+        <input type="number" id="monthlyIncome" required placeholder="למשל: 15000">
+
+        <label for="monthlyExpenses">הוצאות חודשיות (בש"ח):</label>
+        <input type="number" id="monthlyExpenses" required placeholder="למשל: 10000">
+
+        <label for="currentSavings">חסכונות נוכחיים (בש"ח):</label>
+        <input type="number" id="currentSavings" required placeholder="למשל: 100000">
+
+        <label for="expectedReturn">תשואה שנתית צפויה על ההשקעות (%):</label>
+        <input type="number" id="expectedReturn" value="7" required placeholder="למשל: 7">
+
+        <button type="submit">חשב את העצמאות הכלכלית שלי</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+    <div class="explanation">
+      <h2>מהי "עצמאות כלכלית"?</h2>
+      <p>עצמאות כלכלית היא מצב בו החסכונות וההשקעות שלכם מספיקים כדי לכסות את כל הוצאותיכם לאורך זמן, ללא צורך בהכנסה מעבודה. המחשבון שלנו מבוסס על "כלל ה-4%", עיקרון מקובל בתכנון פיננסי:</p>
+      <ul>
+        <li>הרעיון הוא שאם תוכלו למשוך 4% מהחסכונות שלכם מדי שנה, הכסף צפוי להספיק לכם לטווח ארוך (30 שנה או יותר).</li>
+        <li>זה מבוסס על ההנחה שהתיק שלכם ימשיך לגדול בקצב שיפצה על המשיכות והאינפלציה.</li>
+      </ul>
+
+      <h2>איך המחשבון עובד?</h2>
+      <h3>1. חישוב סכום היעד</h3>
+      <p>סכום היעד = הוצאות שנתיות * 25</p>
+      
+      <div class="example">
+        <strong>דוגמה:</strong> אם ההוצאות החודשיות שלכם הן 10,000 ש"ח:
+        <br>הוצאות שנתיות = 10,000 * 12 = 120,000 ש"ח
+        <br>סכום היעד = 120,000 * 25 = 3,000,000 ש"ח
+      </div>
+
+      <h3>2. חישוב החיסכון השנתי</h3>
+      <p>חיסכון שנתי = (הכנסה חודשית - הוצאות חודשיות) * 12</p>
+
+      <h3>3. סימולציה שנתית</h3>
+      <p>המחשבון מבצע סימולציה שנה אחר שנה, עד שמגיעים לסכום היעד:</p>
+      <ol>
+        <li>מתחילים עם החסכונות הנוכחיים.</li>
+        <li>בכל שנה:
+          <ul>
+            <li>מגדילים את החסכונות בשיעור התשואה הצפויה.</li>
+            <li>מוסיפים את החיסכון השנתי.</li>
+            <li>בודקים אם הגענו לסכום היעד.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="example">
+        <strong>דוגמה:</strong> נניח שהתחלתם עם 500,000 ש"ח, חוסכים 60,000 ש"ח בשנה, והתשואה הצפויה היא 7%:
+        <br>שנה 1: 500,000 * 1.07 + 60,000 = 595,000 ש"ח
+        <br>שנה 2: 595,000 * 1.07 + 60,000 = 696,650 ש"ח
+        <br>וכן הלאה...
+      </div>
+
+      <div class="note">
+        <strong>חשוב לזכור:</strong>
+        <ul>
+          <li>זוהי הערכה בלבד, המבוססת על הנחות פשטניות.</li>
+          <li>המחשבון מניח שההכנסות, ההוצאות והתשואה נשארות קבועות, מה שלא תמיד נכון במציאות.</li>
+          <li>אינו לוקח בחשבון אינפלציה, מיסים או שינויים משמעותיים בחיים.</li>
+          <li>כלל ה-4% אינו מתאים לכל מצב ועלול להשתנות בהתאם לנסיבות השוק ולמצב הכלכלי.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 כל הזכויות שמורות ל-Finpact</p>
+    <p>לתכנון פיננסי מקיף ומותאם אישית, מומלץ להתייעץ עם יועץ פיננסי מוסמך.</p>
+    <a href="https://wa.me/972545425189" class="whatsapp-button">לפגישה פנסיונית ללא עלות לחץ כאן</a>
+    <div class="disclaimer">
+      אין לראות באמור לעיל משום ייעוץ השקעות, המלצה או חוות דעת באשר לכדאיות השקעה במוצרים פיננסיים
+    </div>
+  </footer>
+
+  <div class="tip-container">
+    <div class="tip-icon" id="tipIcon">
+      <img alt="אייקון מחשבון, לחץ לקבלת טיפ פיננסי" src="calculator-icon.png" width="42" height="42">
+    </div>
+    <div class="tip-text" id="tipText">לטיפ פיננסי<br>לחץ כאן</div>
+  </div>
+  <div class="tip-content" id="tipContent"></div>
+
+  <script>
+    document.getElementById('financialIndependenceForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
+      const monthlyExpenses = parseFloat(document.getElementById('monthlyExpenses').value);
+      const currentSavings = parseFloat(document.getElementById('currentSavings').value);
+      const expectedReturn = parseFloat(document.getElementById('expectedReturn').value) / 100;
+
+      const annualSavings = (monthlyIncome - monthlyExpenses) * 12;
+      const targetAmount = monthlyExpenses * 12 * 25;
+
+      let years = 0;
+      let totalSavings = currentSavings;
+
+      while (totalSavings < targetAmount) {
+        totalSavings = totalSavings * (1 + expectedReturn) + annualSavings;
+        years++;
+      }
+
+      const resultElement = document.getElementById('result');
+      resultElement.innerHTML = `
+        <h3>תוצאות החישוב:</h3>
+        <p>בהתבסס על הנתונים שהזנתם, אתם צפויים להגיע לעצמאות כלכלית בעוד <strong>${years} שנים</strong>.</p>
+        <p>סכום היעד: <strong>${targetAmount.toLocaleString()} ש"ח</strong></p>
+      `;
+      resultElement.style.display = 'none';
+      setTimeout(() => {
+        resultElement.style.display = 'block';
+      }, 10);
+    });
+
+    const tipIcon = document.getElementById('tipIcon');
+    const tipText = document.getElementById('tipText');
+    const tipContent = document.getElementById('tipContent');
+    let tipVisible = false;
+
+    const financialTips = [
+      "שקלו להשקיע בקרנות מדד בעלות דמי ניהול נמוכים.",
+      "הקפידו לשמור על קרן חירום של 3-6 חודשי הוצאות.",
+      "נסו לחסוך לפחות 20% מההכנסה החודשית שלכם.",
+      "בדקו את הביטוחים שלכם מדי שנה כדי לוודא שאתם לא משלמים יותר מדי.",
+      "השתמשו בכלל 50/30/20: 50% להוצאות הכרחיות, 30% לרצונות, 20% לחיסכון.",
+      "שקלו לפתוח חשבון חיסכון נפרד עבור מטרות קצרות טווח.",
+      "נסו להגדיל את ההכנסה שלכם על ידי פיתוח מיומנויות חדשות או עבודה נוספת.",
+      "הימנעו מחובות בריבית גבוהה, כמו חובות כרטיסי אשראי.",
+      "השקיעו בעצמכם: השכלה וקורסים יכולים להגדיל את הפוטנציאל הכלכלי שלכם.",
+      "תכננו את הפרישה שלכם מוקדם ככל האפשר, גם אם אתם צעירים.",
+      "השתמשו באפליקציות לניהול תקציב כדי לעקוב אחר ההוצאות שלכם.",
+      "שקלו להשקיע בנדל\"ן כאפיק השקעה לטווח ארוך.",
+      "בדקו אפשרויות להקטנת הוצאות קבועות כמו חשבונות חשמל ותקשורת.",
+      "למדו על אפשרויות השקעה שונות והתאימו את תיק ההשקעות שלכם לרמת הסיכון הרצויה.",
+      "שקלו לפתוח קרן השתלמות אם אתם שכירים - זוהי דרך מצוינת לחיסכון עם הטבות מס.",
+      "בדקו אם אתם זכאים להטבות מס על חסכונות פנסיוניים ונצלו אותן.",
+      "השתמשו בכרטיסי אשראי בחכמה - נצלו הטבות אך הימנעו מריביות גבוהות.",
+      "שקלו לרכוש ביטוח אובדן כושר עבודה להגנה על ההכנסה שלכם.",
+      "בדקו אפשרויות למחזור משכנתא אם יש לכם - זה עשוי לחסוך לכם כסף רב לאורך זמן.",
+      "השקיעו בבריאות שלכם - זו השקעה ארוכת טווח שיכולה לחסוך הוצאות רפואיות בעתיד.",
+      "למדו על זכויותיכם הפנסיוניות במקום העבודה ונצלו אותן במלואן.",
+      "שקלו להשתמש בשירותי ייעוץ פיננסי מקצועי לתכנון ארוך טווח.",
+      "בדקו אפשרויות לחיסכון בהוצאות ביטוח על ידי השוואת מחירים ומיקוח.",
+      "נסו לצמצם הוצאות על מותרות ולהגדיל את החיסכון בהתאם.",
+      "שקלו להשקיע בקרנות נאמנות מגוונות להפחתת סיכונים.",
+      "בדקו אפשרויות לחיסכון בהוצאות רכב, כולל שימוש בתחבורה ציבורית או שיתוף נסיעות.",
+      "למדו על אסטרטגיות מיסוי חכמות שיכולות לעזור לכם לשמור על יותר מהכסף שלכם.",
+      "שקלו לפתוח חשבון חיסכון לילדים ולהתחיל לחסוך עבורם מוקדם ככל האפשר.",
+      "בדקו אפשרויות להשקעה באג\"ח ממשלתיות כאפיק השקעה בטוח יחסית.",
+      "נסו לחיות מתחת ליכולותכם הכלכליות ולהשקיע את ההפרש."
+    ];
+
+    function showTip() {
+      const randomTip = financialTips[Math.floor(Math.random() * financialTips.length)];
+      tipContent.textContent = randomTip;
+      tipContent.style.display = 'block';
+      tipVisible = true;
+    }
+
+    function hideTip() {
+      tipContent.style.display = 'none';
+      tipVisible = false;
+    }
+
+    tipIcon.addEventListener('click', function() {
+      if (!tipVisible) {
+        showTip();
+      } else {
+        hideTip();
+      }
+    });
+
+    tipText.addEventListener('click', function() {
+      if (!tipVisible) {
+        showTip();
+      } else {
+        hideTip();
+      }
+    });
+  </script>
+</body></html>
